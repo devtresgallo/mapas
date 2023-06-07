@@ -31,7 +31,7 @@ $(document).ready(function () {
         fillOpacity: 0.4,
         radius: 400
     }).addTo(map);
-    fireArea.bindPopup("Revuelta Palermo<br>Incendio provocado");
+    fireArea.bindPopup("Incendio provocado<br>Hora approx. 13:12");
 
     var fireIcon = L.icon({
         iconUrl: 'img/flame-icon.png',
@@ -40,7 +40,7 @@ $(document).ready(function () {
     });
 
     var fireMarker = L.marker([38.11, 13.353], {icon: fireIcon}).addTo(map);
-    fireMarker.bindPopup("Revuelta Palermo<br>Incendio provocado");
+    fireMarker.bindPopup("Incendio provocado<br>Hora approx. 13:12");
 
     var restrictedArea = L.polygon([
         [38.1157, 13.3615],
@@ -53,6 +53,17 @@ $(document).ready(function () {
     ).addTo(map);
     restrictedArea.bindPopup("<i>Área restringida</i>");
 
+    
+    var rutaCoords = [
+        [38.1157, 13.3615],
+        [38.11065, 13.3647],
+        [38.1096, 13.36159],
+        [38.10873, 13.35728]
+    ]
+    var ruta = L.polyline(rutaCoords, {color: 'green', stroke: true}).addTo(map);
+    ruta.bindPopup("Posible ruta de los rebeldes");
+
+    /* Slider opacidad */
     $("#sldOpacity").on('change', function(){
         $("#img-opacity").html(this.value);
         myLayer.setOpacity(this.value);
