@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     var map = L.map('map').setView(center, zoom);
     var myLayer;
-    var palermoURL = './img/old-palermo.png';
+    var palermoURL = 'img/old-palermo.png';
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
